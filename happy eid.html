@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>happy eid</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #c8e1f4;
+        }
+
+        .content {
+            text-align: center;
+            padding: 20px;
+            background-color: #c8e1f4;
+
+        }
+
+        input, button {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        function redirect() {
+            const validNames = [
+                "esraa", "alaa", "jana", "omar", "hend", 
+                "khloud", "ramy", "ahmad_adel", "epthal", "ahmad", 
+                "rokaya", "khadija", "mai", "jomana", "lojain_ahmad", 
+                "lojain", "donia" , "nabila", "ashraf" 
+            ]; 
+
+            const inputName = document.getElementById("nameInput").value;
+            
+            if (validNames.includes(inputName)) {
+                const targetPage = "eid.mubarak.html?name=" + inputName; 
+                window.location.href = targetPage;
+            } else {
+                alert("Invalid name. Please try again.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="content">
+        <h1>Enter your Name</h1>
+        <p>happy eid :)</p>
+        <form onsubmit="redirect(); return false;">
+            <label for="nameInput">Name:</label>
+            <input type="text" id="nameInput" name="name" required>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
